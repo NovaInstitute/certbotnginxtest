@@ -9,20 +9,16 @@ setup with nginx.
 This is useful when you need to set up nginx as a reverse proxy for an
 application.
 
-## Installation
-1. [Install docker-compose](https://docs.docker.com/compose/install/#install-compose).
+## Operation (requires docker-compose)
+1. Modify configuration:
+- Add domains and email addresses to **init-letsencrypt.sh**
+- Replace all occurrences of example.org with primary domain (the first one you added to init-letsencrypt.sh) in **data/nginx/app.conf**
 
-2. Clone this repository: `git clone https://github.com/wmnnd/nginx-certbot.git .`
-
-3. Modify configuration:
-- Add domains and email addresses to *init-letsencrypt.sh*
-- Replace all occurrences of example.org with primary domain (the first one you added to init-letsencrypt.sh) in *data/nginx/app.conf*
-
-4. Run the init script:
+2. Run the init script:
 
         ./init-letsencrypt.sh
 
-5. Run the server:
+3. Run the server:
 
         docker-compose up
 
